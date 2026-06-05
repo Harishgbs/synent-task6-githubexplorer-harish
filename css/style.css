@@ -57,7 +57,7 @@
   --bg-secondary: #ffffff;
   --bg-card: #ffffff;
   --bg-card-border: #e8e5f0;
-  --bg-glass: transparent;
+  --bg-glass: rgba(255, 255, 255, 0.7);
   --bg-hover: rgba(86, 29, 226, 0.04);
   --bg-header: rgba(248, 247, 252, 0.8);
   --border: rgba(0, 0, 0, 0.08);
@@ -130,6 +130,10 @@ body {
   pointer-events: none;
   background: #050510;
   overflow: hidden;
+}
+
+[data-theme="light"] #dot-canvas {
+  background: #f8f7fc;
 }
 
 .dot-particle {
