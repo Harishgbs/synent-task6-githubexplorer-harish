@@ -88,7 +88,7 @@ No build tools or dependencies required.
 
 ## Commit History
 
-| Commit | Message |
+| # | Message |
 |---|---|
 | 1 | Initialize GitHub explorer project structure |
 | 2 | Implement GitHub API integration and search functionality |

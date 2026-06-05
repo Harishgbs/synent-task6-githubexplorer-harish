@@ -168,6 +168,30 @@
   }
 
   // ============================================================
+  // Animated Counter
+  // ============================================================
+  function animateCounter(el, target, duration) {
+    duration = duration || 800;
+    const start = performance.now();
+    const startVal = 0;
+
+    function update(now) {
+      const elapsed = now - start;
+      const progress = Math.min(elapsed / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      const current = Math.round(startVal + (target - startVal) * eased);
+      el.textContent = current;
+      if (progress < 1) {
+        requestAnimationFrame(update);
+      } else {
+        el.textContent = target;
+      }
+    }
+
+    requestAnimationFrame(update);
+  }
+
+  // ============================================================
   // Render Profile
   // ============================================================
   function renderProfile(user) {
@@ -193,10 +217,10 @@
       profileMeta.appendChild(div);
     });
 
-    // Stats
-    statRepos.textContent = user.public_repos;
-    statFollowers.textContent = user.followers;
-    statFollowing.textContent = user.following;
+    // Stats with animated counters
+    animateCounter(statRepos, user.public_repos, 1000);
+    animateCounter(statFollowers, user.followers, 1000);
+    animateCounter(statFollowing, user.following, 1000);
     statJoined.textContent = formatDateJoined(user.created_at);
 
     // Profile button
@@ -212,7 +236,7 @@
   // ============================================================
   function renderRepos(repos) {
     if (repos.length === 0) {
-      reposList.innerHTML = '<p style="text-align:center;color:var(--color-text-muted);padding:24px 0;">No repositories found.</p>';
+      reposList.innerHTML = '<p style="text-align:center;color:var(--text-muted);padding:24px 0;">No repositories found.</p>';
       reposCount.textContent = '0';
       return;
     }
@@ -392,7 +416,7 @@
     const url = `https://github.com/${currentUsername}`;
     try {
       await navigator.clipboard.writeText(url);
-      showToast('Profile link copied to clipboard');
+      showToast('Copied!');
     } catch {
       showToast('Failed to copy link');
     }
