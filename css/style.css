@@ -1096,7 +1096,7 @@ body {
   font-size: 0.8rem;
   color: var(--text-muted);
   font-family: var(--font-mono);
-  background: var(--bg-card);
+  background: var(--bg-glass);
   padding: 4px 12px;
   border-radius: 20px;
   border: 1px solid var(--border);
