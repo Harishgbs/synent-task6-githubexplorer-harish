@@ -204,6 +204,7 @@
 
     // Show
     showOnly(profile);
+    requestAnimationFrame(scrollToResults);
   }
 
   // ============================================================
@@ -368,6 +369,22 @@
       }
     }
   });
+
+  // Keyboard shortcut: '/' to focus search
+  document.addEventListener('keydown', function (e) {
+    if (e.key === '/' && !['INPUT', 'TEXTAREA'].includes(e.target.tagName)) {
+      e.preventDefault();
+      searchInput.focus();
+    }
+  });
+
+  // Smooth scroll to results on profile load
+  function scrollToResults() {
+    const rect = results.getBoundingClientRect();
+    if (rect.top < 0) {
+      results.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
 
   // Copy profile link
   btnCopy.addEventListener('click', async function () {
