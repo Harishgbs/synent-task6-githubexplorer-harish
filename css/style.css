@@ -6,9 +6,11 @@
   --bg-secondary: #0f0d1a;
   --bg-card: #13111f;
   --bg-card-border: #1e1a30;
-  --bg-glass: rgba(19, 17, 31, 0.7);
+  --bg-glass: rgba(10, 10, 25, 0.55);
   --bg-hover: rgba(255, 255, 255, 0.04);
   --bg-header: rgba(10, 10, 15, 0.8);
+  --glass-border: 1px solid rgba(124, 58, 237, 0.15);
+  --glass-shadow: 0 0 20px rgba(124, 58, 237, 0.08), 0 0 50px rgba(124, 58, 237, 0.04);
   --border: rgba(255, 255, 255, 0.06);
   --border-hover: rgba(126, 77, 245, 0.3);
   --border-glow: rgba(86, 29, 226, 0.4);
@@ -189,7 +191,7 @@ body {
   display: flex;
   flex-direction: column;
   position: relative;
-  z-index: 1;
+  z-index: 10;
 }
 
 /* ============================================================
@@ -266,7 +268,7 @@ body {
   justify-content: center;
   border-radius: 50%;
   background: var(--bg-glass);
-  border: 1px solid var(--border);
+  border: var(--glass-border);
   color: var(--text-dim);
   cursor: pointer;
   transition: all var(--transition);
@@ -386,12 +388,13 @@ body {
   display: flex;
   align-items: center;
   background: var(--bg-glass);
-  border: 2px solid var(--border);
+  border: 2px solid rgba(124, 58, 237, 0.15);
   border-radius: 60px;
   overflow: hidden;
   transition: all var(--transition);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
+  box-shadow: var(--glass-shadow);
 }
 
 .search__group:focus-within {
@@ -468,7 +471,7 @@ body {
   padding: 7px 16px;
   border-radius: 20px;
   background: var(--bg-glass);
-  border: 1px solid var(--border);
+  border: var(--glass-border);
   color: var(--text-muted);
   cursor: pointer;
   transition: all var(--transition-bounce);
@@ -628,7 +631,7 @@ body {
   border-radius: var(--r-md);
   position: relative;
   overflow: hidden;
-  border: 1px solid var(--border);
+  border: var(--glass-border);
 }
 
 .skeleton__pulse::after {
@@ -656,8 +659,9 @@ body {
   background: var(--bg-glass);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid var(--bg-card-border);
+  border: var(--glass-border);
   border-radius: var(--r-xl);
+  box-shadow: var(--glass-shadow);
 }
 
 .skeleton__avatar {
@@ -712,14 +716,15 @@ body {
 
 .profile__card {
   background: var(--bg-glass);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid var(--bg-card-border);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: var(--glass-border);
   border-radius: var(--r-xl);
   padding: 32px;
   position: relative;
   overflow: hidden;
   transition: all var(--transition);
+  box-shadow: var(--glass-shadow);
 }
 
 .profile__card::before {
@@ -823,8 +828,8 @@ body {
   gap: 12px 20px;
   margin-bottom: 24px;
   padding: 18px 0;
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
+  border-top: 1px solid rgba(124, 58, 237, 0.12);
+  border-bottom: 1px solid rgba(124, 58, 237, 0.12);
 }
 
 .profile__meta-item {
@@ -903,10 +908,12 @@ body {
 
 .profile__btn--secondary {
   background: var(--bg-glass);
-  border: 1px solid var(--border);
+  border: var(--glass-border);
   color: var(--text);
   position: relative;
   overflow: hidden;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
 }
 
 .profile__btn--secondary::before {
@@ -952,7 +959,7 @@ body {
   background: var(--bg-glass);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid var(--bg-card-border);
+  border: var(--glass-border);
   border-radius: var(--r-lg);
   padding: 22px 14px;
   text-align: center;
@@ -960,6 +967,7 @@ body {
   position: relative;
   overflow: hidden;
   cursor: default;
+  box-shadow: var(--glass-shadow);
 }
 
 .stat::before {
@@ -1058,12 +1066,13 @@ body {
    ============================================================ */
 .repos {
   background: var(--bg-glass);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid var(--bg-card-border);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: var(--glass-border);
   border-radius: var(--r-xl);
   padding: 28px;
   transition: all var(--transition);
+  box-shadow: var(--glass-shadow);
 }
 
 .repos:hover {
@@ -1076,7 +1085,7 @@ body {
   justify-content: space-between;
   margin-bottom: 18px;
   padding-bottom: 18px;
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid rgba(124, 58, 237, 0.12);
 }
 
 .repos__title {
@@ -1099,7 +1108,7 @@ body {
   background: var(--bg-glass);
   padding: 4px 12px;
   border-radius: 20px;
-  border: 1px solid var(--border);
+  border: var(--glass-border);
 }
 
 .repos__list {
@@ -1113,8 +1122,10 @@ body {
   align-items: center;
   gap: 18px;
   padding: 18px 20px;
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid var(--bg-card-border);
+  background: var(--bg-glass);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: var(--glass-border);
   border-radius: var(--r-md);
   text-decoration: none;
   color: var(--text);
@@ -1252,7 +1263,7 @@ body {
 .footer {
   padding: 24px 0;
   text-align: center;
-  border-top: 1px solid var(--border);
+  border-top: 1px solid rgba(124, 58, 237, 0.12);
   position: relative;
 }
 
@@ -1288,12 +1299,11 @@ body {
   padding: 14px 28px;
   border-radius: 60px;
   background: var(--bg-glass);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid var(--border);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: var(--glass-border);
   color: var(--text);
-  box-shadow: var(--shadow-card), 0 0 30px var(--primary-glow);
-  backdrop-filter: blur(20px);
+  box-shadow: var(--glass-shadow), 0 0 30px var(--primary-glow);
   animation: toastIn 0.4s var(--ease-out);
   white-space: nowrap;
   letter-spacing: 0.2px;
