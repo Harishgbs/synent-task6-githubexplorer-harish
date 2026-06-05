@@ -11,8 +11,8 @@
     maxTranslate: 15,
     maxScale: 1.8,
     baseOpacity: 0.35,
-    springStiffness: 0.035,
-    springDamping: 0.88,
+    springStiffness: 0.065,
+    springDamping: 0.82,
     color: '124, 77, 245'
   };
 
@@ -118,7 +118,7 @@
       d.vy = (d.vy + fy) * cfg.springDamping;
       d.x += d.vx;
       d.y += d.vy;
-      d.scale += (ts - d.scale) * 0.12;
+      d.scale += (ts - d.scale) * 0.2;
 
       // opacity & glow
       var opacity = ts > 1

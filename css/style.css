@@ -653,7 +653,9 @@ body {
   align-items: center;
   gap: 24px;
   padding: 28px;
-  background: var(--bg-card);
+  background: var(--bg-glass);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border: 1px solid var(--bg-card-border);
   border-radius: var(--r-xl);
 }
@@ -709,7 +711,9 @@ body {
 }
 
 .profile__card {
-  background: var(--bg-card);
+  background: var(--bg-glass);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   border: 1px solid var(--bg-card-border);
   border-radius: var(--r-xl);
   padding: 32px;
@@ -945,7 +949,9 @@ body {
 }
 
 .stat {
-  background: var(--bg-card);
+  background: var(--bg-glass);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border: 1px solid var(--bg-card-border);
   border-radius: var(--r-lg);
   padding: 22px 14px;
@@ -1051,7 +1057,9 @@ body {
    Repositories
    ============================================================ */
 .repos {
-  background: var(--bg-card);
+  background: var(--bg-glass);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   border: 1px solid var(--bg-card-border);
   border-radius: var(--r-xl);
   padding: 28px;
@@ -1279,7 +1287,9 @@ body {
   font-weight: 600;
   padding: 14px 28px;
   border-radius: 60px;
-  background: var(--bg-secondary);
+  background: var(--bg-glass);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   border: 1px solid var(--border);
   color: var(--text);
   box-shadow: var(--shadow-card), 0 0 30px var(--primary-glow);
